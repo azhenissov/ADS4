@@ -2,13 +2,13 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-public class Vertex<V>{
+public class Vertex<V> {
     private V data;
-    private Map<Vertex<V>, Double> adjacenctVertices;
+    private Map<Vertex<V>, Double> adjacentVertices;
 
     public Vertex(V data){
         this.data = data;
-        this.adjacenctVertices = new HashMap<>();
+        this.adjacentVertices = new HashMap<>();
     }
 
     public V getData(){
@@ -19,12 +19,12 @@ public class Vertex<V>{
         this.data = data;
     }
 
-    public Map<Vertex<V>, Double> getAdjacenctVertices(){
-        return adjacenctVertices;
+    public Map<Vertex<V>, Double> getAdjacentVertices(){
+        return adjacentVertices;
     }
 
     public void addAdjacentVertex(Vertex<V> destination, Double weight){
-        adjacenctVertices.put(destination, weight);
+        adjacentVertices.put(destination, weight);
     }
 
     @Override
@@ -39,6 +39,7 @@ public class Vertex<V>{
         Vertex<?> vertex = (Vertex<?>) o;
         return Objects.equals(data, vertex.data);
     }
+
     @Override
     public int hashCode(){
         return Objects.hash(data);
